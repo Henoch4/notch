@@ -1,10 +1,10 @@
 # Notch
 
-Create and inspect option records. Prices are supplied by participants; this prototype has no external price oracle.
+Write collateral-backed options, buy them, and exercise against the published oracle price. The owner maintains that price; payouts are capped by the option’s locked collateral.
 
 ## Mainnet status
 
-Mainnet deployment is pending. The interface does not simulate transactions or balances.
+Contract on BOT Chain mainnet (677): [0x648c87521F0Fc04DFC498F74e9D5a8B2fb92DD77](https://scan.botchain.ai/address/0x648c87521F0Fc04DFC498F74e9D5a8B2fb92DD77).
 
 Wallet actions require BOT Chain mainnet, deployed bytecode, and a connected compatible wallet. Every action is simulated before a transaction review; only a subsequent wallet confirmation can send it.
 
@@ -19,14 +19,15 @@ Wallet actions require BOT Chain mainnet, deployed bytecode, and a connected com
 
 ## Contract interface
 
-`frontend/product.json` uses the ABI compiled from the current Solidity source.
+`frontend/product.json` uses the current-source ABI, matched against the deployed mainnet runtime bytecode. Explorer source publication is tracked separately.
 
 | Action | Contract signature |
 |---|---|
 | Buy an option | `buyOption(uint256)` |
 | Write an option | `createOption(address,uint256,uint256,uint8,uint256)` |
 | Exercise your option | `exerciseOption(uint256,uint256)` |
-| Expire an option (owner only) | `expireOption(uint256)` |
+| Expire an option | `expireOption(uint256)` |
+| Publish an underlying price (owner only) | `setUnderlyingPrice(address,uint256)` |
 
 ## Run locally
 

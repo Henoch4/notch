@@ -1,9 +1,9 @@
 {
-  "abiSource": "pending-current-source",
+  "abiSource": "runtime-matched-current-source",
   "repo": "notch",
   "brand": "Notch",
   "summary": "Write collateral-backed options, buy them, and exercise against the published oracle price. The owner maintains that price; payouts are capped by the option’s locked collateral.",
-  "address": null,
+  "address": "0x648c87521F0Fc04DFC498F74e9D5a8B2fb92DD77",
   "owner": null,
   "abi": [
     {
